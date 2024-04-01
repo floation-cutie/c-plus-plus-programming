@@ -13,6 +13,7 @@ private:
     double x, y;
 
 public:
+    // initialized list delcaration which is useful in creating const object
     Point(double _x = 0, double _y = 0) : x(_x), y(_y)
     {
         std::cout << __FUNCTION__ << " constructor being called." << std::endl;
