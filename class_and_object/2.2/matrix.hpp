@@ -16,7 +16,7 @@ using MatrixPointer = int **;
 class Matrix
 {
 private:
-    int rows, columns;
+    size_t rows, columns;
     MatrixPointer mPointer;
     // friend are neccessary sometimes
     friend std::ostream &operator<<(std::ostream &os, const Matrix &m);
@@ -24,7 +24,7 @@ private:
     friend Matrix operator-(const Matrix &lhs, const Matrix &rhs);
 
 public:
-    Matrix(int r = 4, int c = 5);
+    Matrix(size_t r = 4, size_t c = 5);
     // copy constructor is very important
     // default copy just copy the same pointer to the same memory position
     Matrix(const Matrix &other);

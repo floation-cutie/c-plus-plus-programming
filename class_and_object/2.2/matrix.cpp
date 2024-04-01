@@ -1,6 +1,6 @@
 #include "matrix.hpp"
 
-Matrix::Matrix(int r, int c) : rows(r), columns(c)
+Matrix::Matrix(size_t r, size_t c) : rows(r), columns(c)
 {
     if (rows <= 0 || columns <= 0)
     {
@@ -62,8 +62,8 @@ Matrix &Matrix::operator=(const Matrix &other)
 // why this move function exist?
 // In the function body,
 // assignment operator will also create copy for big objects
-Matrix::Matrix(Matrix &&other) noexcept : columns(std::move(other.columns)),
-                                          rows(std::move(other.rows)),
+Matrix::Matrix(Matrix &&other) noexcept : rows(std::move(other.rows)),
+                                          columns(std::move(other.columns)),
                                           mPointer(std::move(other.mPointer))
 {
     std::cout << __FUNCTION__ << " said Hello from the move constructor!" << std::endl;
@@ -99,7 +99,6 @@ Matrix::~Matrix()
 void Matrix::init()
 {
     std::cout << "Please fill the matrix entries with your input." << std::endl;
-    std::cout << "The default row is 4, and the default column is 5." << std::endl;
     std::cout << std::endl;
     for (size_t i = 0; i < rows; i++)
     {
@@ -134,7 +133,6 @@ Matrix Matrix::subtract(const Matrix &one, const Matrix &two)
 
 std::ostream &operator<<(std::ostream &os, const Matrix &m)
 {
-    os << "Here is the matrix looks like. " << std::endl;
     for (size_t i = 0; i < m.rows; i++)
     {
         for (size_t j = 0; j < m.columns - 1; j++)
