@@ -17,6 +17,7 @@ int main(int argc, char const *argv[])
     std::cout << "A1 - A2 is\n"
               << a1 - a2 << "\n";
     auto pA1 = new Matrix(size_t(1), size_t(2));
+    // explicitly declare the size of matrix
     auto pA2 = new Matrix(size_t(1), size_t(2));
     auto pA3 = new Matrix(size_t(2), size_t(33)); // Doesn't matter. Won't affect the program
 

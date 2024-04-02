@@ -1,22 +1,33 @@
-#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
 
-void anyname()
+class animal
 {
-    std::cout << "Current function: " << __FUNCTION__ << std::endl;
-}
-class frac
+    // problem
+    // animal(int a)
+    // {
+    //     cout << "Monkey " << endl;
+    // }
+};
+class monkey : public animal
 {
 public:
-    int num, dnum;
-    frac(int num, int dnum)
+    monkey()
     {
-        this->num = num;
-        this->dnum = dnum;
+        cout << "Monkey " << endl;
     }
 };
-int main()
+
+class goldenmonkey : public monkey
 {
-    anyname();
-    const frac a{2, 3};
+public:
+    goldenmonkey()
+    {
+        cout << "goldenMonkey " << endl;
+    }
+};
+int main(int argc, char const *argv[])
+{
+    goldenmonkey g;
     return 0;
 }

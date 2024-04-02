@@ -39,7 +39,7 @@ public:
     // the r-reference itself is a l-value which is needed to be cast to r-value
     Matrix add(const Matrix &one, const Matrix &two);
     Matrix subtract(const Matrix &one, const Matrix &two);
-    // copy assignment and prevent self-assignmentcdcx
+    // copy assignment and prevent self-assignment
     Matrix &operator=(const Matrix &other);
     // tell the library of the fact that move semantic
     // will not throw any exception
