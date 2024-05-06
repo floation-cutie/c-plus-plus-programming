@@ -14,7 +14,7 @@ private:
 
 public:
     // initialized list delcaration which is useful in creating const object
-    Point(double _x = 0, double _y = 0) : x(_x), y(_y)
+    explicit Point(double _x = 0, double _y = 0) : x(_x), y(_y)
     {
         std::cout << __FUNCTION__ << " constructor being called." << std::endl;
     };
@@ -50,7 +50,7 @@ public:
     ~circle();
 };
 
-inline circle::circle(double x = 0, double y = 0, double r = 0) : center(x, y), radius(r)
+inline circle::circle(double x = 0, double y = 0, double r = 0) : center(Point(x, y)), radius(r)
 {
     std::cout << __FUNCTION__ << " constructor being called." << std::endl;
 }

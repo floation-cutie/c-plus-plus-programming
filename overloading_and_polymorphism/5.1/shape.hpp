@@ -9,7 +9,7 @@ using std::endl;
 class Shape
 {
 public:
-    Shape();
+    explicit Shape();
     virtual ~Shape();
     // 定义为抽象类 -- > 支持显式接口功能
     // 定义为虚函数的作用 -- > 支持运行多态

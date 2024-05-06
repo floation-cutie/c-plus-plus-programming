@@ -9,7 +9,7 @@ using std::endl;
 class Shape
 {
 public:
-    Shape();
+    explicit Shape();
     virtual ~Shape();
     virtual double area() = 0;
 };
