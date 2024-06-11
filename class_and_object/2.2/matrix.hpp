@@ -19,12 +19,15 @@ private:
     size_t rows, columns;
     MatrixPointer mPointer;
     // friend are neccessary sometimes
+    // 在重载运算符时，有时需要访问类的私有成员以实现运算
+    // 对于类中实现的成员运算符重载函数，
+    // 第一个操作数（左操作数）必须是类的实例，即隐含的 this 指针。
     friend std::ostream &operator<<(std::ostream &os, const Matrix &m);
     friend Matrix operator+(const Matrix &lhs, const Matrix &rhs);
     friend Matrix operator-(const Matrix &lhs, const Matrix &rhs);
 
 public:
-    Matrix(size_t r = 4, size_t c = 5);
+    Matrix(size_t r = 1, size_t c = 2);
     // copy constructor is very important
     // default copy just copy the same pointer to the same memory position
     Matrix(const Matrix &other);

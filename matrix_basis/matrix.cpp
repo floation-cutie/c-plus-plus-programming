@@ -9,6 +9,12 @@ void printMatrix(const MatrixPointer &, size_t row = 4, size_t col = 5);
 void matrixAddition(const MatrixPointer &, const MatrixPointer &, const MatrixPointer &, size_t row = 4, size_t col = 5);
 void matrixSubtraction(const MatrixPointer &, const MatrixPointer &, const MatrixPointer &, size_t row = 4, size_t col = 5);
 void freeMatrixSpace(MatrixPointer &, size_t row = 4);
+
+/**
+ * use the following command to run the program
+ *Get-Content .\testmatrix.txt | .\matrix.exe
+ */
+
 int main(int argc, char const *argv[])
 {
     MatrixPointer A1, A2, A3;
@@ -65,6 +71,7 @@ void initMatrix(const MatrixPointer &mPointer, size_t row, size_t col)
 
 /**
  * 格式化输出矩阵内容
+ * 可以影响常量指针背后的值
  */
 void printMatrix(const MatrixPointer &mPointer, size_t row, size_t col)
 {

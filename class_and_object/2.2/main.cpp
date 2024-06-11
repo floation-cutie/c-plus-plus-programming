@@ -16,6 +16,16 @@ int main(int argc, char const *argv[])
               << a1 + a2 << "\n";
     std::cout << "A1 - A2 is\n"
               << a1 - a2 << "\n";
+    Matrix a3;
+    // a1 + a2 的 运算符函数调用之后直接移动转发给了a3
+    a3 = a1 + a2;
+    std::cout << "A3 is\n";
+    std::cout << a3 << std::endl;
+
+    std::cout << "A3 is\n";
+    a3 = a1 - a2;
+    std::cout << a3 << std::endl;
+
     auto pA1 = new Matrix(size_t(1), size_t(2));
     // explicitly declare the size of matrix
     auto pA2 = new Matrix(size_t(1), size_t(2));

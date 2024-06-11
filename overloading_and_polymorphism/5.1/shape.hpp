@@ -6,6 +6,9 @@
 using std::cout;
 using std::endl;
 
+// 通过在基类中定义虚函数，可以实现动态绑定，
+// 使得基类指针或引用可以调用派生类的实现，从而实现多态。
+// 定义为抽象类要求子类必须重写
 class Shape
 {
 public:
@@ -13,6 +16,7 @@ public:
     virtual ~Shape();
     // 定义为抽象类 -- > 支持显式接口功能
     // 定义为虚函数的作用 -- > 支持运行多态
+    // 含有至少一个纯虚函数
     virtual double area() = 0;
 };
 

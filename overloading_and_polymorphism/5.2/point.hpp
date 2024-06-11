@@ -49,10 +49,12 @@ public:
         return *this;
     };
     // after
+    // 参数 int 只是一个占位符，用于与前置递增运算符区分
     Point operator++(int)
     {
         Point old = *this;
         y++;
+        // 拷贝构造函数在此被调用
         return old;
     };
     Point &operator--()

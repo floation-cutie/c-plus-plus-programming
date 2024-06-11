@@ -7,6 +7,8 @@
  * 故而会出现显式地析构函数次数更多的情形
  * 实际上是两次对象作为函数参数，并没有明确地表现出来
  */
+
+// Point class use inline to implement
 class Point
 {
 private:
@@ -46,6 +48,7 @@ public:
     void init();
     bool judgeIntersection(const circle &another);
     double getRad() const { return radius; };
+    // 此处返回的不是引用，所以会调用拷贝构造函数
     Point getCenter() const { return center; };
     ~circle();
 };
@@ -67,9 +70,11 @@ inline circle::~circle()
     std::cout << __FUNCTION__ << " destructor being called." << std::endl;
 }
 
+// 常量引用，所以不会调用拷贝构造函数
 bool circle::judgeIntersection(const circle &another)
 {
     double sumRad = this->getRad() + another.getRad();
+    // 此处会调用两次Point 拷贝构造函数
     double dis = this->getCenter().distance(another.getCenter());
     return dis <= sumRad;
 };

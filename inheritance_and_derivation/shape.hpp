@@ -6,12 +6,17 @@
 using std::cout;
 using std::endl;
 
+// 如果基类中的方法不是虚函数，
+// 派生类中的同名方法不能通过基类指针或引用调用，
+// 这会导致静态绑定，无法实现多态。
+
 class Shape
 {
 public:
     explicit Shape();
     virtual ~Shape();
-    virtual double area() = 0;
+    // virtual double area() = 0;
+    double area();
 };
 
 Shape::Shape()
@@ -24,6 +29,11 @@ Shape::~Shape()
     cout << __FUNCTION__ << " Hello from abstract class destructor! " << endl;
 };
 
+double Shape::area()
+{
+    std::cout << "\nTry to compute area for the shape" << std::endl;
+    return 0;
+}
 class Rectangle : public Shape
 {
 private:
@@ -32,7 +42,11 @@ private:
 public:
     Rectangle(double w, double l);
     virtual ~Rectangle();
-    virtual double area() override
+    // virtual double area() override
+    // {
+    //     return width * length;
+    // }
+    double area()
     {
         return width * length;
     }
@@ -57,7 +71,12 @@ private:
 public:
     Circle(double r);
     virtual ~Circle();
-    double area() override
+    //     double area() override
+    //     {
+    //         return M_PI * radius * radius;
+    // #undef _USE_MATH_DEFINES
+    //     }
+    double area()
     {
         return M_PI * radius * radius;
 #undef _USE_MATH_DEFINES

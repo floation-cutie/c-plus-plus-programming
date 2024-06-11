@@ -39,9 +39,9 @@ int main(int argc, char const *argv[])
             break;
         }
         else if (input > ans)
-            cout << "Input to big." << endl;
+            cout << "Input too big." << endl;
         else
-            cout << "Input to little." << endl;
+            cout << "Input too little." << endl;
     }
     return 0;
 }

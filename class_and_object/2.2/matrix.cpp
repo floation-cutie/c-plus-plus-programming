@@ -29,6 +29,7 @@ Matrix::Matrix(const Matrix &other)
               mPointer);
 }
 /*
+* 直接防止自赋值的原资源释放
 one slight good version of copy assignment
 Matrix &Matrix::operator=(const Matrix &other)
 {
