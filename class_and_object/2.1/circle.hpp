@@ -46,7 +46,7 @@ private:
 public:
     circle(double x, double y, double radius);
     void init();
-    bool judgeIntersection(const circle &another);
+    bool judgeIntersection(const circle &another) const;
     double getRad() const { return radius; };
     // 此处返回的不是引用，所以会调用拷贝构造函数
     Point getCenter() const { return center; };
@@ -71,7 +71,7 @@ inline circle::~circle()
 }
 
 // 常量引用，所以不会调用拷贝构造函数
-bool circle::judgeIntersection(const circle &another)
+bool circle::judgeIntersection(const circle &another) const
 {
     double sumRad = this->getRad() + another.getRad();
     // 此处会调用两次Point 拷贝构造函数

@@ -11,6 +11,6 @@ int main()
         std::cout << "They intersects with each other." << std::endl;
     else
         std::cout << "They are too far from each other." << std::endl;
-    system("pause");
+    // system("pause");
     return 0;
 }

@@ -46,6 +46,7 @@ public:
     Point &operator++()
     {
         x++;
+        y++;
         return *this;
     };
     // after
@@ -54,18 +55,21 @@ public:
     {
         Point old = *this;
         y++;
+        x++;
         // 拷贝构造函数在此被调用
         return old;
     };
     Point &operator--()
     {
         x--;
+        y--;
         return *this;
     };
     Point operator--(int)
     {
         Point old = *this;
         y--;
+        x--;
         return old;
     };
 };

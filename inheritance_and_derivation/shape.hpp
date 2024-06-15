@@ -15,7 +15,6 @@ class Shape
 public:
     explicit Shape();
     virtual ~Shape();
-    // virtual double area() = 0;
     double area();
 };
 

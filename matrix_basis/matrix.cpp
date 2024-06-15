@@ -64,7 +64,14 @@ void initMatrix(const MatrixPointer &mPointer, size_t row, size_t col)
     {
         for (size_t j = 0; j < col; j++)
         {
-            cin >> mPointer[i][j];
+            if (!(cin >> mPointer[i][j]))
+            {
+                // 输入无效
+                cerr << "错误：输入不是整数" << endl;
+                cin.clear();                                          // 清空输入流
+                cin.ignore(numeric_limits<streamsize>::max(), '\n '); // 跳过当前行
+                return;
+            }
         }
     }
 }
