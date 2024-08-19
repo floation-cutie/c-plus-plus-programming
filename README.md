@@ -7,6 +7,8 @@ MakeFile适用于Windows下的PowerShell
 Note:使用常量对象时，只能调用其常成员函数 
 
 对C++ 的 M_PI undefined 宏的分析
+
+参考[博客](https://init.blog/1549/)
 > 分析预编译器的引用过程
 > 
 > 先去寻找定义这个 M_PI 宏的文件, 从 cmath 出发, 
